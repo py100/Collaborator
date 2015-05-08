@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="标题" />
+    
     <EditText
         android:id="@+id/question_title"
         android:layout_width="fill_parent"
@@ -20,6 +21,7 @@
         android:layout_below="@+id/hint_question_title" >
         <requestFocus />
     </EditText>
+    
 	<TextView
 	    android:id="@+id/hint_question_content"
 	    android:layout_width="wrap_content"
@@ -28,12 +30,12 @@
 	    android:layout_below="@+id/question_title"
 	    android:text="详细内容"
 	    />
+	
 	<EditText
 	    android:id="@+id/question_content"
 	    android:layout_width="fill_parent"
 	    android:layout_height="150dp"
 	    android:layout_below="@+id/hint_question_content">
-	    
 	</EditText>
 
 	<TextView
@@ -44,6 +46,7 @@
 	    android:layout_below="@+id/question_content"
 	    android:text="地址"
 	    />
+	
 	<EditText
 	    android:id="@+id/address"
 	    android:layout_width="fill_parent"
@@ -51,6 +54,7 @@
 	    android:layout_below="@+id/hint_address"
 	    android:ems="10"
 	    android:inputType="textPostalAddress" />
+	
 	<Spinner
         android:id="@+id/reward"
         android:layout_width="100dp"
@@ -68,5 +72,4 @@
 	    android:layout_below="@+id/address"
 	    android:layout_marginTop="10dp"
 	    android:text="提交" />
-
 </RelativeLayout>
