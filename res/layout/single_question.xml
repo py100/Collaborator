@@ -14,14 +14,13 @@
         android:layout_height="wrap_content"
         android:text="标题" />
     
-    <EditText
+    <TextView
         android:id="@+id/question_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hint_question_title" >
-        <requestFocus />
-    </EditText>
-    
+        android:layout_below="@+id/hint_question_title"
+        android:hint="问题标题" />
+            
 	<TextView
 	    android:id="@+id/hint_question_content"
 	    android:layout_width="wrap_content"
@@ -31,12 +30,12 @@
 	    android:text="详细内容"
 	    />
 	
-	<EditText
+	<TextView
 	    android:id="@+id/question_content"
 	    android:layout_width="fill_parent"
 	    android:layout_height="150dp"
-	    android:layout_below="@+id/hint_question_content">
-	</EditText>
+	    android:layout_below="@+id/hint_question_content"
+	    android:hint="问题详情"/>
 
 	<TextView
 	    android:id="@+id/hint_address"
@@ -47,29 +46,36 @@
 	    android:text="地址"
 	    />
 	
-	<EditText
+	<TextView
 	    android:id="@+id/address"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_below="@+id/hint_address"
 	    android:ems="10"
-	    android:inputType="textPostalAddress" />
+	    android:hint="地址" />
 	
-	<Spinner
-        android:id="@+id/reward"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/address"
-        android:layout_centerHorizontal="true" />
-
+	<TextView 
+	    android:id="@+id/hint_reward"
+	    android:layout_width="50dp"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="20dp"
+	    android:text="悬赏："
+	    android:layout_below="@+id/address"
+	    />
+	<TextView 
+	    android:id="@+id/reward"
+	    android:layout_width="50dp"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="40dp"
+	    android:hint="悬赏金额"
+	    android:layout_toRightOf="@+id/hint_reward"
+	    />
 	<Button
-	    android:id="@+id/submit"
+	    android:id="@+id/take_order"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentRight="true"
 	    android:layout_below="@+id/address"
 	    android:layout_marginTop="10dp"
-	    android:text="提交" />
+	    android:text="接单" />
 </RelativeLayout>
