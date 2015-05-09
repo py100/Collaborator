@@ -13,20 +13,72 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="标题" />
-    
+    <TextView
+        android:id="@+id/hint_variety"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/variety"
+        android:text="分类：" />
+    <TextView
+        android:id="@+id/variety"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:hint="问题类型" />
+    <TextView
+        android:id="@+id/hint_numof_ame_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/numofsamequestion"
+        android:text="同问：" />
+    <TextView
+        android:id="@+id/numofsamequestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/hint_variety"
+        android:layout_marginRight="10dp"
+        android:hint="同问数" />
     <TextView
         android:id="@+id/question_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/hint_question_title"
         android:hint="问题标题" />
-            
+    
+    <TextView
+        android:id="@+id/hint_asker"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="提问者："
+        android:layout_below="@+id/question_title"
+        />
+   	<TextView
+	    android:id="@+id/asker"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/hint_asker"
+	    android:layout_alignBottom="@+id/hint_asker"
+	    android:layout_marginLeft="19dp"
+	    android:layout_toRightOf="@+id/hint_asker"
+	    android:hint="提问者用户名" />
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="time"
+        android:layout_below="@+id/question_title"
+        android:layout_alignParentRight="true"
+        />
+    
 	<TextView
 	    android:id="@+id/hint_question_content"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_marginTop="40dp"
-	    android:layout_below="@+id/question_title"
+	    android:layout_marginTop="20dp"
+	    android:layout_below="@+id/asker"
 	    android:text="详细内容"
 	    />
 	
@@ -34,9 +86,31 @@
 	    android:id="@+id/question_content"
 	    android:layout_width="fill_parent"
 	    android:layout_height="150dp"
+	    android:layout_marginTop="10dp"
 	    android:layout_below="@+id/hint_question_content"
 	    android:hint="问题详情"/>
-
+	
+	<TextView
+        android:id="@+id/hint_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/hint_question_content"
+	    android:layout_alignBottom="@+id/hint_question_content"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/status"
+        android:layout_below="@+id/time"
+        android:text="问题状态：" />
+	
+	<TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+ 	    android:layout_alignBaseline="@+id/hint_question_content"
+	    android:layout_alignBottom="@+id/hint_question_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:hint="状态" />	
+        
 	<TextView
 	    android:id="@+id/hint_address"
 	    android:layout_width="wrap_content"
@@ -53,7 +127,7 @@
 	    android:layout_below="@+id/hint_address"
 	    android:ems="10"
 	    android:hint="地址" />
-	
+
 	<TextView 
 	    android:id="@+id/hint_reward"
 	    android:layout_width="50dp"
@@ -61,14 +135,6 @@
 	    android:layout_marginTop="20dp"
 	    android:text="悬赏："
 	    android:layout_below="@+id/address"
-	    />
-	<TextView 
-	    android:id="@+id/reward"
-	    android:layout_width="50dp"
-	    android:layout_height="wrap_content"
-	    android:layout_marginTop="40dp"
-	    android:hint="悬赏金额"
-	    android:layout_toRightOf="@+id/hint_reward"
 	    />
 	<Button
 	    android:id="@+id/take_order"
@@ -78,4 +144,16 @@
 	    android:layout_below="@+id/address"
 	    android:layout_marginTop="10dp"
 	    android:text="接单" />
+
+	<TextView
+	    android:id="@+id/reward"
+	    android:layout_width="50dp"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/hint_reward"
+	    android:layout_alignBottom="@+id/hint_reward"
+	    android:layout_toRightOf="@+id/hint_question_content"
+	    android:hint="悬赏金额" />
+
+
+
 </RelativeLayout>
