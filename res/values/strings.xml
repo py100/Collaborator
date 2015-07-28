@@ -4,5 +4,6 @@
     <string name="app_name">Collaborator</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="serverURL">http://dev.iboxshare.com/askapp/test/insert.php</string>
 
 </resources>
