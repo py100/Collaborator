@@ -27,6 +27,7 @@ import app.info.CommonInfo;
 
 public class UserRegister extends Activity {
 
+	private Button dasdad;
 	private Button submit;
 	private EditText userName;
 	private EditText passWord;
