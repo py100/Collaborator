@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				//asdadasdadasdasdadsadasdadadasdasd
+				//Git测试
 				Intent intent = new Intent(MainActivity.this,UserRegister.class);
 				startActivity(intent);
 				
