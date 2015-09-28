@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				//asdadasdadasdasdadsad
 				Intent intent = new Intent(MainActivity.this,UserRegister.class);
 				startActivity(intent);
 				
