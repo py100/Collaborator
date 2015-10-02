@@ -19,17 +19,25 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btn = (Button)findViewById(R.id.button1);
+        Button questionButtonTest = (Button)findViewById(R.id.button2);
         btn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				//asdadasdadasdasdadsadasdadadasdasd
-				//Git测试
 				Intent intent = new Intent(MainActivity.this,UserRegister.class);
 				startActivity(intent);
 				
 			}
 		});
+        questionButtonTest.setOnClickListener(new OnClickListener(){
+        	
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this,com.question.QuestionHome.class);
+				startActivity(intent);
+				
+			}
+        });
     }
 
 }
