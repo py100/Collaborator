@@ -27,13 +27,16 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080024;
+        public static final int action_settings=0x7f080027;
         public static final int address=0x7f080009;
         public static final int asker=0x7f080015;
         public static final int btnChangePortrait=0x7f08000e;
         public static final int btnSetLikedQuestionType=0x7f08000f;
         public static final int button1=0x7f080000;
         public static final int button2=0x7f080001;
+        public static final int confirmPasswordEditText=0x7f080024;
+        public static final int confirmPasswordFrame=0x7f080022;
+        public static final int confirmPasswordTextView=0x7f080023;
         public static final int hint_address=0x7f080008;
         public static final int hint_asker=0x7f080014;
         public static final int hint_numof_ame_question=0x7f080012;
@@ -51,8 +54,8 @@ public final class R {
         public static final int question_content=0x7f080007;
         public static final int question_title=0x7f080005;
         public static final int registrationResult=0x7f08000c;
-        public static final int registrationSubmit=0x7f080022;
-        public static final int result=0x7f080023;
+        public static final int registrationSubmit=0x7f080026;
+        public static final int result=0x7f080025;
         public static final int reward=0x7f08000a;
         public static final int settings=0x7f080003;
         public static final int status=0x7f080018;

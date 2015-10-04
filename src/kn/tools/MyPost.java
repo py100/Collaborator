@@ -2,8 +2,6 @@ package kn.tools;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.io.ObjectOutputStream.PutField;
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,19 +14,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import com.brator.collaborator.MainActivity;
 import com.brator.collaborator.RegisterResult;
-import com.brator.collaborator.UserRegister;
-
-import android.R.integer;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.widget.TextView;
 
 /**
  * @author KNCX
@@ -46,8 +35,6 @@ import android.widget.TextView;
  */
 public class MyPost extends Activity {
 
-	private MainActivity activity;
-	private Context context;
 	private String url;
 	private String userName;
 	private String passWord;

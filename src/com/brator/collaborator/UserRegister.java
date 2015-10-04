@@ -30,8 +30,7 @@ public class UserRegister extends Activity {
 	private Button submit;
 	private EditText userName;
 	private EditText passWord;
-	private String resultString;
-
+	private EditText confirmPassword;
 	static private TextView resultTextView;
 
 	HttpClient client;
@@ -42,8 +41,19 @@ public class UserRegister extends Activity {
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
-			System.out.println(msg.obj.toString());
-			resultTextView.setText(msg.obj.toString());
+			switch(msg.obj.toString()){
+			case "Success":
+				resultTextView.setText(msg.obj.toString());
+				break;
+			case "Exist":
+				resultTextView.setText(msg.obj.toString());
+				break;
+			default:
+				resultTextView.setText("数据异常，请检查网络连接是否正常!");
+				break;
+				
+			}
+			
 		}
 
 	};
@@ -52,11 +62,11 @@ public class UserRegister extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.user_register);
 
-		String result;
 		resultTextView = (TextView) findViewById(R.id.result);
 		client = new DefaultHttpClient();
 		userName = (EditText) findViewById(R.id.userNameEditText);
 		passWord = (EditText) findViewById(R.id.pwdEditText);
+		confirmPassword = (EditText)findViewById(R.id.confirmPasswordEditText);
 		resultTextView = (TextView) findViewById(R.id.result);
 		// 单击注册按钮执行操作
 		submit = (Button) findViewById(R.id.registrationSubmit);
@@ -64,20 +74,30 @@ public class UserRegister extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				new Thread(new Runnable() {
+				resultTextView.setText("");
+				if(confirmPassword.getText().toString().equals(passWord.getText().toString())){
+					new Thread(new Runnable() {
 
-					@Override
-					public void run() {
-						register(CommonInfo.registerUrl, userName.getText()
-								.toString(), passWord.getText().toString());
-					}
-				}).start();
+						@Override
+						public void run() {
+							register(CommonInfo.registerUrl, userName.getText()
+									.toString(), passWord.getText().toString());
+						}
+					}).start();
+					
+				}else{
+					System.out.println(confirmPassword.getText().toString() );
+					System.out.println(passWord.getText().toString());
+					resultTextView.setText("两次输入的密码不一致，请核对！");
+				}
+
 			}
 
 		});
 
 	}
-
+	
+	//注册账号
 	public void register(String registerUrl, String userName, String passWord) {
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpPost httpPost = new HttpPost(registerUrl);
@@ -89,15 +109,21 @@ public class UserRegister extends Activity {
 			httpPost.setEntity(new UrlEncodedFormEntity(list, "utf-8"));
 			HttpResponse httpResponse = httpClient.execute(httpPost);
 			if (200 == httpResponse.getStatusLine().getStatusCode()) {
+				
+				Message msg = Message.obtain();
+				
 				switch (EntityUtils.toString(httpResponse.getEntity())) {
 				case "Success":
-					Message msg = Message.obtain();
 					msg.obj = "Success";
 					handler.sendMessage(msg);
 					break;
-
+				case "Exist":
+					msg.obj = "Exist";
+					handler.sendMessage(msg);
+					break;
 				default:
 					break;
+					
 				}
 			} else {
 
