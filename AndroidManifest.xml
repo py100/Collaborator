@@ -40,6 +40,10 @@
             android:name="com.question.QuestionHome"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.question.QuestionSubmit"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
