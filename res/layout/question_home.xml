@@ -33,12 +33,21 @@
         android:background="#00000000"
         android:src="@drawable/default_round_head" />
 
+        <Button 
+          	android:id="@+id/testButton"
+          	android:layout_width="match_parent"
+          	android:layout_height="wrap_content"
+          	android:text="显示问题"
+          	android:layout_below="@+id/questionTagSelector"
+            />
+    
         <ListView
 	        android:id="@+id/listView"
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
-	        android:layout_below="@+id/questionTagSelector">
+	        android:layout_below="@+id/testButton">
 	        <!-- 此处插入question item -->
+
    		</ListView>
 
 </RelativeLayout>

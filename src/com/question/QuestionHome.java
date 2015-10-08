@@ -34,6 +34,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;  
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ImageButton;
@@ -55,16 +56,18 @@ public class QuestionHome extends Activity {
     private ArrayAdapter<String> spinnerAdapter;    
     private ImageButton settingsButton;
     private ImageButton addQuestionBtn;
+    private Button testButton;
     
 	private Handler handler; // 声明一个Handler对象
 	private String result = ""; // 声明一个代表显示结果的字符串
 	
-    private String title;
-    private String content;
-    private String refund;
-    private String time, location;
-    private String questionType;
-    private String questionStatus;
+    private String title = "{title}";
+    private String content = "{content}";
+    private String refund = "{refund}";
+    private String time = "{time}";
+    private String location = "{location}";
+    private String questionType = "{questionType}";
+    private String questionStatus = "{questionType}";
     
     JSONObject jsonResult;
     
@@ -86,6 +89,7 @@ public class QuestionHome extends Activity {
         list.add("热门");    
         list.add("新问题");    
         list.add("我的关注");           
+        testButton = (Button)findViewById(R.id.testButton);
         mySpinner = (Spinner)findViewById(R.id.questionTagSelector);    
         settingsButton = (ImageButton)findViewById(R.id.settings);
         addQuestionBtn =  (ImageButton)findViewById(R.id.addQuestionIcon);
@@ -128,27 +132,33 @@ public class QuestionHome extends Activity {
 			}
 		});
         
-        
-        new Thread(new Runnable() {
-			public void run() {
-				try {
-					getQuestion();
-					title = jsonResult.getString("title");
-					content = jsonResult.getString("content");
-					refund = jsonResult.getString("refund");
-					time = Integer.toString(Calendar.getInstance().get(Calendar.YEAR)) + "年" + jsonResult.getString("time");
-					location = jsonResult.getString("location");
-					questionType = jsonResult.getString("type");
-					questionStatus = jsonResult.getString("status");
-					
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				Message m = handler.obtainMessage(); // 获取一个Message
-				handler.sendMessage(m); // 发送消息
+        testButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+		        new Thread(new Runnable() {
+					public void run() {
+						try {
+							getQuestion();
+							title = jsonResult.getString("title");
+							content = jsonResult.getString("content");
+							refund = jsonResult.getString("refund");
+							time = Integer.toString(Calendar.getInstance().get(Calendar.YEAR)) + "年" + jsonResult.getString("time");
+							location = jsonResult.getString("location");
+							questionType = jsonResult.getString("type");
+							questionStatus = jsonResult.getString("status");
+							
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						Message m = handler.obtainMessage(); // 获取一个Message
+						handler.sendMessage(m); // 发送消息
+					}
+				}).start(); // 开启线程
+				
 			}
-		}).start(); // 开启线程
+		});
         
 		handler = new Handler() {
 			@Override
