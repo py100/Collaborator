@@ -49,7 +49,7 @@ public class UserRegister extends Activity {
 				resultTextView.setText(msg.obj.toString());
 				break;
 			default:
-				resultTextView.setText("Êı¾İÒì³££¬Çë¼ì²éÍøÂçÁ¬½ÓÊÇ·ñÕı³£!");
+				resultTextView.setText("æ•°æ®å¼‚å¸¸ï¼Œè¯·æ£€æŸ¥ç½‘ç»œè¿æ¥æ˜¯å¦æ­£å¸¸!");
 				break;
 				
 			}
@@ -68,7 +68,7 @@ public class UserRegister extends Activity {
 		passWord = (EditText) findViewById(R.id.pwdEditText);
 		confirmPassword = (EditText)findViewById(R.id.confirmPasswordEditText);
 		resultTextView = (TextView) findViewById(R.id.result);
-		// µ¥»÷×¢²á°´Å¥Ö´ĞĞ²Ù×÷
+		// å•å‡»æ³¨å†ŒæŒ‰é’®æ‰§è¡Œæ“ä½œ
 		submit = (Button) findViewById(R.id.registrationSubmit);
 		submit.setOnClickListener(new OnClickListener() {
 
@@ -88,7 +88,7 @@ public class UserRegister extends Activity {
 				}else{
 					System.out.println(confirmPassword.getText().toString() );
 					System.out.println(passWord.getText().toString());
-					resultTextView.setText("Á½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ£¬ÇëºË¶Ô£¡");
+					resultTextView.setText("ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´ï¼Œè¯·æ ¸å¯¹ï¼");
 				}
 
 			}
@@ -97,7 +97,7 @@ public class UserRegister extends Activity {
 
 	}
 	
-	//×¢²áÕËºÅ
+	//æ³¨å†Œè´¦å·
 	public void register(String registerUrl, String userName, String passWord) {
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpPost httpPost = new HttpPost(registerUrl);
