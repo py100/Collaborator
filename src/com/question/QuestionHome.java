@@ -126,7 +126,7 @@ public class QuestionHome extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				Intent intent = new Intent( );
 				startActivity(intent);
 				
 			}
