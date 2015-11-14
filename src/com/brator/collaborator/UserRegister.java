@@ -49,7 +49,7 @@ public class UserRegister extends Activity {
 				resultTextView.setText(msg.obj.toString());
 				break;
 			default:
-				resultTextView.setText("数据异常，请检查网络连接是否正常!");
+				resultTextView.setText("注册失败，请检查网络！");
 				break;
 				
 			}
@@ -88,7 +88,7 @@ public class UserRegister extends Activity {
 				}else{
 					System.out.println(confirmPassword.getText().toString() );
 					System.out.println(passWord.getText().toString());
-					resultTextView.setText("两次输入的密码不一致，请核对！");
+					resultTextView.setText("两次输入密码不一致！");
 				}
 
 			}
